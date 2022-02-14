@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+repo-add -s -n -R concise.db.tar.gz *.pkg.tar.zst
+
+rm concise.db
+rm concise.db.sig
+rm concise.files
+rm concise.files.sig
+
+mv concise.db.tar.gz concise.db
+mv concise.db.tar.gz.sig concise-db.sig
+mv concise.files.tar.gz concise.files
+mv concise.files.tar.gz.sig concise.files.sig
+
